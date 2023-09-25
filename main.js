@@ -1,7 +1,7 @@
 const adviceId = document.getElementById("advice-id");
 const adviceText = document.getElementById("advice-text");
 const adviceBtn = document.getElementById("generate-btn");
-const url = "https://api.adviceslip.com";
+const url = "https://api.adviceslip.com/advice";
 
 async function getAdvice() {
   const res = await fetch(url);
@@ -9,6 +9,8 @@ async function getAdvice() {
   adviceId.innerText = id;
   adviceText.innerText = advice;
 }
-getAdvice()
+getAdvice();
 
-adviceBtn.addEventListener("click".getAdvice)
+adviceBtn.addEventListener("click", () => {
+  getAdvice();
+})
